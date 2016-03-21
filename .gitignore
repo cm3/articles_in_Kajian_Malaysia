@@ -1,5 +1,5 @@
 # Ignore output of scraper
-scraperwiki.sqlite
+data.sqlite
 # ignore local environment
 venv
 init.bat
