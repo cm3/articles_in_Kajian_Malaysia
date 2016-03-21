@@ -32,7 +32,9 @@ for a in soup.find_all(href=re_issue):
     #scraperwiki.sqlite.save(unique_keys=['uri'], data={"uri":urlhead+a["href"], "label": a.get_text().strip()}, table_name="data")
     c.execute('INSERT OR REPLACE INTO data VALUES (?,?)', (urlhead+a["href"],a.get_text().strip()))
 
-#
+conn.commit()
+conn.close()
+
 # # Write out to the sqlite database using scraperwiki library
 # scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
 #
